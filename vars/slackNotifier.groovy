@@ -2,12 +2,12 @@
 
 def call(String buildResult, String changeLog) {
   
-  changelog = changelog.replace("\n", "\\n")
-  changelog = changelog.replace("\t", "\\t")
-  changelog = changelog.replace("\"", '\\"')
-  changelog = changelog.replace("&", "&amp;")
-  changelog = changelog.replace("<", "&lt;")
-  changelog = changelog.replace(">", "&gt;")
+  changeLog = changeLog.replace("\n", "\\n")
+  changeLog = changeLog.replace("\t", "\\t")
+  changeLog = changeLog.replace("\"", '\\"')
+  changeLog = changeLog.replace("&", "&amp;")
+  changeLog = changeLog.replace("<", "&lt;")
+  changeLog = changeLog.replace(">", "&gt;")
 
   if ( buildResult == "SUCCESS" ) {
     slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} at Url: ${env.BUILD_URL} was successful ChangeLog: $changeLog"
