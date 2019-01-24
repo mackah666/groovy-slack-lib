@@ -3,7 +3,7 @@ import java.net.URLEncoder
 
 def call(String buildResult, String changeLog) {
   
-  changeLog =  { URLDecoder.decode(changeLog) }
+  changeLog =  URLDecoder.decode(changeLog)
   
   if ( buildResult == "SUCCESS" ) {
     slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} at Url: ${env.BUILD_URL} was successful ChangeLog: $changeLog"
