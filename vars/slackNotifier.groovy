@@ -2,6 +2,7 @@
 
 def call(String buildResult, String changeLog) {
   
+  changeLog =  { URLDecoder.decode(changeLog) }
   changeLog = changeLog.replace("\n", "\\n")
   changeLog = changeLog.replace("\t", "\\t")
   changeLog = changeLog.replace("\"", '\\"')
